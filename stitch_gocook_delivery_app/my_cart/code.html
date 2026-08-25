@@ -1,0 +1,226 @@
+<!DOCTYPE html><html class="light" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>GoCook - Cart</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Montserrat:wght@600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed": "#301400",
+                        "primary-fixed-dim": "#4ae183",
+                        "surface-container-highest": "#e1e3e4",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed-variant": "#713700",
+                        "on-surface-variant": "#3d4a3e",
+                        "error": "#ba1a1a",
+                        "on-error": "#ffffff",
+                        "surface": "#f8f9fa",
+                        "inverse-on-surface": "#f0f1f2",
+                        "tertiary-fixed": "#cfe5ff",
+                        "surface-container-low": "#f3f4f5",
+                        "tertiary": "#4b6076",
+                        "on-primary-container": "#005027",
+                        "surface-container-high": "#e7e8e9",
+                        "error-container": "#ffdad6",
+                        "on-background": "#191c1d",
+                        "outline-variant": "#bbcbbb",
+                        "surface-bright": "#f8f9fa",
+                        "secondary-fixed-dim": "#ffb783",
+                        "tertiary-fixed-dim": "#b3c9e2",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed": "#ffdcc5",
+                        "surface-container": "#edeeef",
+                        "primary-fixed": "#6bfe9c",
+                        "primary": "#006d37",
+                        "secondary-container": "#fc8f34",
+                        "on-tertiary-container": "#32475c",
+                        "on-surface": "#191c1d",
+                        "on-secondary-container": "#663100",
+                        "on-primary-fixed-variant": "#005228",
+                        "on-tertiary-fixed-variant": "#34495e",
+                        "surface-variant": "#e1e3e4",
+                        "surface-tint": "#006d37",
+                        "inverse-primary": "#4ae183",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed": "#051d30",
+                        "on-secondary": "#ffffff",
+                        "secondary": "#944a00",
+                        "outline": "#6c7b6d",
+                        "on-primary-fixed": "#00210c",
+                        "surface-dim": "#d9dadb",
+                        "on-tertiary": "#ffffff",
+                        "primary-container": "#2ecc71",
+                        "inverse-surface": "#2e3132",
+                        "background": "#f8f9fa",
+                        "tertiary-container": "#9fb5ce"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "4px",
+                        "md": "16px",
+                        "container-margin": "16px",
+                        "sm": "12px",
+                        "xl": "32px",
+                        "gutter": "12px",
+                        "xs": "8px",
+                        "lg": "24px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "headline-sm": ["Montserrat"],
+                        "body-lg": ["Inter"],
+                        "button-text": ["Montserrat"],
+                        "label-md": ["Inter"],
+                        "display-lg-mobile": ["Montserrat"],
+                        "display-lg": ["Montserrat"],
+                        "headline-md": ["Montserrat"]
+                    },
+                    "fontSize": {
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "button-text": ["14px", { "lineHeight": "20px", "fontWeight": "700" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "display-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "display-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: #F8F9FA; }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+        }
+        .active-press:active { transform: scale(0.98); transition: transform 0.1s; }
+    </style>
+</head>
+<body class="font-body-md text-on-surface pb-[80px]">
+<!-- TopAppBar -->
+<header class="w-full sticky top-0 z-50 bg-surface shadow-[0px_4px_20px_rgba(0,0,0,0.05)] flex items-center justify-between px-container-margin py-md">
+<div class="flex items-center gap-xs text-primary">
+<span class="material-symbols-outlined font-bold">location_on</span>
+<h1 class="font-headline-sm text-headline-sm-mobile">GoCook</h1>
+</div>
+<div class="w-8 h-8 rounded-full overflow-hidden bg-surface-container-high border border-outline-variant">
+<img alt="Profile" class="w-full h-full object-cover" data-alt="A small, circular profile picture of a young professional smiling. Bright, natural lighting, fresh energetic vibe. Set against a clean white background. Consistent with a modern light-mode food delivery app." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrjFiwil0_rjrcde3VrkVRl12t5Z5Znd_nvE_lNdyRCTG5r0mMTF48LjnSjmnPJhanh1x2GjFlb46n34Tq3ZW7w-IrF6w0u-8AQvsq2t3HsSDVZuV95AkqRBjMd-6L3SaZRpENqVzEUJ0utcnAC4cioZ568kjIcoqHibrSqARk0Q-XD7azlo7U9NUo_dUhFT4Y-rHOK8EABZIzvzvGfN75nAyIcS1-jWdko6o9S4JZ3dtyDHXmQUdBvg">
+</div>
+</header>
+<main class="max-w-md mx-auto px-container-margin py-lg space-y-lg">
+<div class="flex justify-between items-end border-b border-outline-variant pb-xs">
+<h2 class="font-headline-md text-headline-md text-on-surface">Your Cart</h2>
+<span class="font-body-md text-body-md text-on-surface-variant">2 Items</span>
+</div>
+<!-- Cart Items -->
+<div class="space-y-sm">
+<!-- Item 1 -->
+<div class="glass-card rounded-xl p-sm flex items-center gap-md">
+<div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0 bg-surface-container">
+<img alt="Chicken Breast" class="w-full h-full object-cover" data-alt="High-quality, appetizing top-down photo of fresh, raw chicken breast fillets on a clean white surface. Soft natural lighting emphasizing freshness. Bright and vibrant colors, fitting for a premium grocery delivery app." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkC8dQw47C1uA_MP9jN2OcinaiV4snhprSdzjOyUzf7QQN2o6Mi165kqHkp5iXsqNDxGHj8B6IV7KARpg2KqOYGcNx6UyqarWNC1BdWKPOuOmRekenMEIwK7SM10f0fwNfR87UvJDKsGXBES3Q6HRbXcQQeG_I_WRKaYdXaQEEiARZkDb6ShAuAvhkv88483YOfUDzFtxreHXN3i3uPqhgWLHF2geirxyp5teJyFM9Qk7GcLF36H9JEA">
+</div>
+<div class="flex-1 flex flex-col justify-between h-full py-1">
+<div>
+<h3 class="font-headline-sm text-headline-sm-mobile text-on-surface leading-tight">Chicken Breast</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">500g</p>
+</div>
+<div class="font-headline-sm text-headline-sm-mobile text-primary mt-xs">₹715</div>
+</div>
+<div class="flex flex-col items-center gap-xs bg-surface-container-low rounded-full px-xs py-1 shadow-sm">
+<button class="w-6 h-6 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[16px]">add</span>
+</button>
+<span class="font-label-md text-label-md text-on-surface font-bold">1</span>
+<button class="w-6 h-6 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-container hover:text-error transition-colors">
+<span class="material-symbols-outlined text-[16px]">remove</span>
+</button>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="glass-card rounded-xl p-sm flex items-center gap-md">
+<div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0 bg-surface-container">
+<img alt="Diced Carrots" class="w-full h-full object-cover" data-alt="Crisp, high-resolution photo of freshly diced orange carrots in a small white bowl. Bright, clean background with soft studio lighting highlighting the vibrant orange color and freshness of the vegetables. Modern food app aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtXiUDJVVT6cwjpt57KHEKkqKcCVkPZysgWU_8pUQd8Jx8uvYgVdo3n8wFNndQ62WexB6Jn3eMVRBmg-t-mUf9DJCJO6dlkdUvM6RpC-GEFJEsltYBvs2klxUeMQRyfbfLiIZHzlOWdSizf3FHgYcXY2YD9_irDwV2FhyNK390PHY1wB6b88C2YhIs49agIkdhluwR67GhA0Shhm3mWFCGdFjyFlaypMXDkVNP6E4lI2XuALAwxI3FJg">
+</div>
+<div class="flex-1 flex flex-col justify-between h-full py-1">
+<div>
+<h3 class="font-headline-sm text-headline-sm-mobile text-on-surface leading-tight">Diced Carrots</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">250g</p>
+</div>
+<div class="font-headline-sm text-headline-sm-mobile text-primary mt-xs">₹185</div>
+</div>
+<div class="flex flex-col items-center gap-xs bg-surface-container-low rounded-full px-xs py-1 shadow-sm">
+<button class="w-6 h-6 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[16px]">add</span>
+</button>
+<span class="font-label-md text-label-md text-on-surface font-bold">2</span>
+<button class="w-6 h-6 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-container hover:text-error transition-colors">
+<span class="material-symbols-outlined text-[16px]">remove</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Order Summary -->
+<div class="glass-card rounded-xl p-md mt-lg">
+<h3 class="font-headline-sm text-headline-sm-mobile text-on-surface mb-sm">Order Summary</h3>
+<div class="space-y-xs font-body-md text-body-md text-on-surface-variant">
+<div class="flex justify-between">
+<span class="">Subtotal</span>
+<span class="text-on-surface font-medium">₹1,070</span>
+</div>
+<div class="flex justify-between">
+<span class="">Delivery Fee</span>
+<span class="text-on-surface font-medium">₹170</span>
+</div>
+</div>
+<div class="border-t border-outline-variant my-sm"></div>
+<div class="flex justify-between items-center font-headline-sm text-headline-sm-mobile text-on-surface">
+<span class="">Total</span>
+<span class="text-primary font-bold text-display-lg-mobile">₹1,240</span>
+</div>
+<button class="w-full mt-lg bg-primary-container text-on-primary font-button-text text-button-text py-md rounded-lg active-press shadow-[0px_8px_24px_rgba(46,204,113,0.15)] flex justify-center items-center gap-xs">
+<span class="">Place Order</span>
+<span class="material-symbols-outlined" style="font-variation-settings: &quot;FILL&quot; 1;">arrow_forward</span>
+</button>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-xl bg-surface-container-lowest border-t border-outline-variant shadow-[0px_-4px_16px_rgba(0,0,0,0.04)] flex justify-around items-center h-16 px-md md:hidden">
+<!-- Home (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all active:scale-90 duration-150 w-16" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-md text-label-md mt-1">Home</span>
+</a>
+<!-- Search (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all active:scale-90 duration-150 w-16" href="#">
+<span class="material-symbols-outlined">search</span>
+<span class="font-label-md text-label-md mt-1">Search</span>
+</a>
+<!-- Cart (Active) -->
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-4 py-1 active:scale-90 transition-transform duration-150 w-20" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: &quot;FILL&quot; 1;">shopping_cart</span>
+<span class="font-label-md text-label-md mt-1 font-bold">Cart</span>
+</a>
+<!-- Profile (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all active:scale-90 duration-150 w-16" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-md text-label-md mt-1">Profile</span>
+</a>
+</nav>
+
+
+</body></html>

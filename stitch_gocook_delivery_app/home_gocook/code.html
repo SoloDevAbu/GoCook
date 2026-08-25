@@ -1,0 +1,288 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>GoCook Home</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&amp;family=Inter:wght@400;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed": "#301400",
+                        "primary-fixed-dim": "#4ae183",
+                        "surface-container-highest": "#e1e3e4",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed-variant": "#713700",
+                        "on-surface-variant": "#3d4a3e",
+                        "error": "#ba1a1a",
+                        "on-error": "#ffffff",
+                        "surface": "#f8f9fa",
+                        "inverse-on-surface": "#f0f1f2",
+                        "tertiary-fixed": "#cfe5ff",
+                        "surface-container-low": "#f3f4f5",
+                        "tertiary": "#4b6076",
+                        "on-primary-container": "#005027",
+                        "surface-container-high": "#e7e8e9",
+                        "error-container": "#ffdad6",
+                        "on-background": "#191c1d",
+                        "outline-variant": "#bbcbbb",
+                        "surface-bright": "#f8f9fa",
+                        "secondary-fixed-dim": "#ffb783",
+                        "tertiary-fixed-dim": "#b3c9e2",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed": "#ffdcc5",
+                        "surface-container": "#edeeef",
+                        "primary-fixed": "#6bfe9c",
+                        "primary": "#006d37",
+                        "secondary-container": "#fc8f34",
+                        "on-tertiary-container": "#32475c",
+                        "on-surface": "#191c1d",
+                        "on-secondary-container": "#663100",
+                        "on-primary-fixed-variant": "#005228",
+                        "on-tertiary-fixed-variant": "#34495e",
+                        "surface-variant": "#e1e3e4",
+                        "surface-tint": "#006d37",
+                        "inverse-primary": "#4ae183",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed": "#051d30",
+                        "on-secondary": "#ffffff",
+                        "secondary": "#944a00",
+                        "outline": "#6c7b6d",
+                        "on-primary-fixed": "#00210c",
+                        "surface-dim": "#d9dadb",
+                        "on-tertiary": "#ffffff",
+                        "primary-container": "#2ecc71",
+                        "inverse-surface": "#2e3132",
+                        "background": "#f8f9fa",
+                        "tertiary-container": "#9fb5ce"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "4px",
+                        "md": "16px",
+                        "container-margin": "16px",
+                        "sm": "12px",
+                        "xl": "32px",
+                        "gutter": "12px",
+                        "xs": "8px",
+                        "lg": "24px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "headline-sm": ["Montserrat"],
+                        "body-lg": ["Inter"],
+                        "button-text": ["Montserrat"],
+                        "label-md": ["Inter"],
+                        "display-lg-mobile": ["Montserrat"],
+                        "display-lg": ["Montserrat"],
+                        "headline-md": ["Montserrat"]
+                    },
+                    "fontSize": {
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "button-text": ["14px", { "lineHeight": "20px", "fontWeight": "700" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "display-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "display-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md antialiased pb-24 min-h-screen">
+<!-- TopAppBar -->
+<header class="w-full sticky top-0 z-50 bg-surface dark:bg-surface-dim shadow-[0px_4px_20px_rgba(0,0,0,0.05)] flex items-center justify-between px-container-margin py-md">
+<div class="flex items-center gap-2">
+<img alt="GoCook Logo" class="h-8 w-8 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxnv6fWOS-jvNUenhIDcQEjD8RIw9qZwPTkO5Xrfk0gTpG-aA7ur0-Yv6bp_JpcGcLIwdDRijuA4ESGsLvKO2jsumV2ZX2mu8m60cjzeT5YSNnS0KwuL-0QYyHK9d6m2tPSRho0yg_GlcRWmG7PrfiHPekPvtlvk2EAsaDGkbA_qb7rNKuLhtPwMBk3NWd1OOhjCLoxLwhxgpDAd2wC5FxRGhBRT33XFaMcnWeo1_jDpGSRISl59iEwA">
+<span class="font-display-lg-mobile text-display-lg-mobile text-primary dark:text-primary-fixed-dim tracking-tight">GoCook</span>
+</div>
+<div class="flex items-center gap-1 text-primary cursor-pointer active:scale-95 duration-200">
+<span class="material-symbols-outlined" style="font-variation-settings: &quot;FILL&quot; 1;">location_on</span>
+<span class="font-button-text text-button-text">123 Fresh Ave</span>
+<span class="material-symbols-outlined text-sm">expand_more</span>
+</div>
+<div class="hidden md:flex items-center gap-2">
+<img class="w-10 h-10 rounded-full bg-surface-variant object-cover" data-alt="A small circular avatar placeholder showing a modern, friendly silhouette for a user profile in a high-end delivery app, clean lighting, white background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgI77LJ9lnZsN4CP8ANP1qGMZDGoLZ-SUSlwPvS0xw6ovYmcgyTI_MGrd3rCgreM1N_14TWFO4_Sai8YuO2RtkDQNg3GvZMEUPOB3qyRWVmFfqxcD3zGzg7-eeNdH7uRuDcc41qXTdQfTuy6YjSNo35hndKAGxpZL3K1nvs0dbO0vSSPMeQNsDIu-c8HwulRO7x1lnMZNiDQ8xRzj7-sCkmGy4h3Znkl78XU_UD8l2eSwKSkm5gpNDCw">
+</div>
+</header>
+<!-- Main Content -->
+<main class="max-w-7xl mx-auto px-container-margin pt-sm pb-xl">
+<!-- Search Bar -->
+<div class="relative w-full mb-lg group">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full h-12 pl-12 pr-4 bg-[#F1F3F5] rounded-lg border-none focus:ring-2 focus:ring-[#2ECC71] text-body-md font-body-md text-on-surface placeholder:text-outline transition-all shadow-[0px_4px_20px_rgba(0,0,0,0.02)]" placeholder="Search for fresh ingredients..." type="text">
+</div>
+<!-- Categories Scroll -->
+<div class="flex gap-4 overflow-x-auto hide-scrollbar pb-sm mb-lg -mx-container-margin px-container-margin snap-x">
+<button class="flex-shrink-0 flex flex-col items-center gap-2 snap-start group active:scale-95 transition-transform">
+<div class="w-16 h-16 rounded-xl bg-surface-container-highest group-hover:bg-primary-container/20 flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-3xl text-on-surface-variant group-hover:text-primary">kebab_dining</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant">Meat</span>
+</button>
+<button class="flex-shrink-0 flex flex-col items-center gap-2 snap-start group active:scale-95 transition-transform">
+<div class="w-16 h-16 rounded-xl bg-surface-container-highest group-hover:bg-primary-container/20 flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-3xl text-on-surface-variant group-hover:text-primary">egg</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant">Dairy</span>
+</button>
+<button class="flex-shrink-0 flex flex-col items-center gap-2 snap-start group active:scale-95 transition-transform">
+<div class="w-16 h-16 rounded-xl bg-surface-container-highest group-hover:bg-primary-container/20 flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-3xl text-on-surface-variant group-hover:text-primary">set_meal</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant">Seafood</span>
+</button>
+<button class="flex-shrink-0 flex flex-col items-center gap-2 snap-start group active:scale-95 transition-transform">
+<div class="w-16 h-16 rounded-xl bg-surface-container-highest group-hover:bg-primary-container/20 flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-3xl text-on-surface-variant group-hover:text-primary">local_pizza</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant">Bakery</span>
+</button>
+<button class="flex-shrink-0 flex flex-col items-center gap-2 snap-start group active:scale-95 transition-transform">
+<div class="w-16 h-16 rounded-xl bg-surface-container-highest group-hover:bg-primary-container/20 flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-3xl text-on-surface-variant group-hover:text-primary">local_drink</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant">Beverages</span>
+</button>
+</div>
+<!-- Featured Banner -->
+<section class="mb-xl">
+<h2 class="font-headline-sm text-headline-sm mb-sm text-on-surface">Featured Today</h2>
+<div class="w-full h-48 rounded-xl overflow-hidden relative shadow-[0px_4px_20px_rgba(0,0,0,0.05)] bg-surface-container-lowest">
+<img class="w-full h-full object-cover absolute inset-0" data-alt="A high-quality, top-down photograph of fresh organic vegetables including vibrant carrots, crisp lettuce, and bright red tomatoes arranged aesthetically on a rustic wooden table. The lighting is natural and bright, emphasizing the freshness and healthiness of the ingredients. The composition leaves negative space on the left for text. The style is modern, appetizing, and tactile." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDB8i3rFW8-lfJnmsa43AqbPBan_yNXhfkZ0j5WloIZv5Hul25lv8hut4znVvYqvRogpnGUyRXSfgTbru8HZ3vGsw2e8YRlbyOG7EAjJtfeB8D2M7qgiG1rSLVSQcz-HsQZAvBPEi3E_eu7OsPmm7iyarIbXrnmghxmiVHbPsraZOmCjEoceVA8umJowk3Mlaw7G21nnwmNc3KcHqN5f5bJWPgONhSG19owuvOZffk4ZnbD0d2FENiRUw">
+<div class="absolute inset-0 bg-gradient-to-r from-surface/90 to-transparent p-lg flex flex-col justify-center w-2/3">
+<span class="bg-[#2ECC71]/20 text-[#006D37] font-label-md text-label-md px-2 py-1 rounded-sm w-max mb-2">Farm Fresh</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Organic Summer Box</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Get 20% off seasonal veggies</p>
+<button class="bg-[#2ECC71] text-white font-button-text text-button-text px-4 py-2 rounded-lg w-max active:scale-95 transition-transform shadow-[0px_4px_12px_rgba(46,204,113,0.3)]">Shop Now</button>
+</div>
+</div>
+</section>
+<!-- Fresh Produce Grid -->
+<section>
+<h2 class="font-headline-sm text-headline-sm mb-sm text-on-surface flex justify-between items-center">
+                Fresh Picks
+                <span class="font-body-md text-body-md text-primary cursor-pointer hover:underline">See All</span>
+</h2>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-md">
+<!-- Product Card 1 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0px_4px_20px_rgba(0,0,0,0.05)] flex flex-col h-full border border-[#E9ECEF] group relative">
+<div class="absolute top-2 left-2 z-10 bg-error text-white font-label-md text-[10px] px-2 py-1 rounded-sm shadow-sm">Low Stock</div>
+<div class="h-32 w-full bg-surface-variant overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="A clean, highly appetizing macro shot of premium cut chicken breast on a pristine white marble chopping board. The lighting is studio quality, highlighting the pinkish fresh texture of the meat with a soft ambient shadow. Subtle garnish of a single green rosemary sprig. Modern, high-end grocery aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDjwm5UWjRvodSJncHAf1laoqUY7g0nKQ1x8rWK0TA_miNa1dTTvfVGx843H_v45oyGhhMCxWNgAQ8aEitKDWw5lguKkGGRaji4y9pp4fPvkMlVZKaUBDb9xsjmR1Zl0TBmkpJV5Tit97XmmC6H9rem_ZYBvJ_kWCUborGIus4vr78-FqmwdodoDg70RRQhj53RKiHkpYxxxA5NTo1MXWIz_Yz9h5fsKMwl4tUFMnKFMm3HBeSJ-VLzg">
+</div>
+<div class="p-sm flex flex-col flex-grow justify-between">
+<div>
+<h3 class="font-body-lg text-body-lg text-on-surface mb-1 line-clamp-1">Free-Range Chicken Breast</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-2">Fresh, boneless</p>
+</div>
+<div class="flex items-end justify-between mt-auto">
+<span class="font-headline-sm text-headline-sm text-on-surface">₹715 <span class="font-body-md text-sm font-normal text-outline">/ 500g</span></span>
+<button class="w-8 h-8 rounded-full bg-[#E67E22] text-white flex items-center justify-center active:scale-90 transition-transform shadow-md">
+<span class="material-symbols-outlined text-lg">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0px_4px_20px_rgba(0,0,0,0.05)] flex flex-col h-full border border-[#E9ECEF] group">
+<div class="h-32 w-full bg-surface-variant overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="A bright, vibrant close-up of sliced organic carrots arranged neatly in a small minimalist ceramic bowl. The lighting is natural and fresh, emphasizing the rich orange hue of the carrots against a clean, light grey background. A soft, ambient shadow grounds the bowl. Appetizing and healthy visual mood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRzq3xtmgkQfzVu4iXAx8g7jaGI-e-bTq-Qzyrx-UjrcIqubWfxJKUlGEDj4eo7_VCpX6LOc2eF7j_zxOzAnsaf5lqx3cHRq_u9epCVmHN7EWRsJQRO7VsR_0sKhpTS2PzvX6o2zUsuRM9HRjphk0Gm4_WQqfyYtl9hW7pGPA-GqFT3LwE9Ed8P97vTqWEkpVXUQC_JKJ3-6hYF2JOdZ3u0CjTEH5BFNEJlXtXuWTYAW_NIPjLDm_rmQ">
+</div>
+<div class="p-sm flex flex-col flex-grow justify-between">
+<div>
+<h3 class="font-body-lg text-body-lg text-on-surface mb-1 line-clamp-1">Organic Sliced Carrots</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-2">Washed &amp; ready</p>
+</div>
+<div class="flex items-end justify-between mt-auto">
+<span class="font-headline-sm text-headline-sm text-on-surface">₹269 <span class="font-body-md text-sm font-normal text-outline">/ 300g</span></span>
+<button class="w-8 h-8 rounded-full bg-[#E67E22] text-white flex items-center justify-center active:scale-90 transition-transform shadow-md">
+<span class="material-symbols-outlined text-lg">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0px_4px_20px_rgba(0,0,0,0.05)] flex flex-col h-full border border-[#E9ECEF] group">
+<div class="h-32 w-full bg-surface-variant overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Fresh, thick-cut Atlantic salmon fillet presented on a piece of dark slate. The vibrant pinkish-orange flesh contrasts beautifully with the dark background. A wedge of bright yellow lemon sits nearby. Lighting is crisp and direct to highlight the freshness and moisture of the seafood. High-end culinary photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAN06LpLOSRntU0s6q3ra2uxlwPFUWackwQzSKWhs28qjYa9lhwmdKbLD7yp_OGS9pfharEhGKZK3HoGDFGETmJWZH0hMpl5rx5sjNaMlOlkMMiPX6CnRL4JRj9PnO2oF4D5_dkzDkW9WzjPM_fSztiwdB8bVZWL3_l4bQiD8Z-F0tHC0pHxBesizCmxOR6a48fHoPy1ia6fQAXOAB6MIJMnMpzsZ0JHmvVnSsgipnW2HAS1AKuDoI6XA">
+</div>
+<div class="p-sm flex flex-col flex-grow justify-between">
+<div>
+<h3 class="font-body-lg text-body-lg text-on-surface mb-1 line-clamp-1">Atlantic Salmon Fillet</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-2">Sustainably sourced</p>
+</div>
+<div class="flex items-end justify-between mt-auto">
+<span class="font-headline-sm text-headline-sm text-on-surface">₹1,090 <span class="font-body-md text-sm font-normal text-outline">/ 400g</span></span>
+<button class="w-8 h-8 rounded-full bg-[#E67E22] text-white flex items-center justify-center active:scale-90 transition-transform shadow-md">
+<span class="material-symbols-outlined text-lg">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0px_4px_20px_rgba(0,0,0,0.05)] flex flex-col h-full border border-[#E9ECEF] group relative">
+<div class="absolute top-2 left-2 z-10 bg-primary-container text-on-primary-container font-label-md text-[10px] px-2 py-1 rounded-sm shadow-sm">New</div>
+<div class="h-32 w-full bg-surface-variant overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="A crisp, vibrant bunch of fresh organic spinach leaves resting on a clean, light-colored wooden cutting board. The green color is deeply saturated and appetizing, conveying health and freshness. Soft, diffused lighting minimizes harsh shadows, maintaining a bright, modern light-mode aesthetic perfect for a fresh grocery app." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJLJFwJQYTIp8TesvTMtYVgrw3D9zKViErWSBDGDjIpIM8xgK5A7ZBMsaVWCw_-Kh_0OyDqu9jcKEyZkuYA2iUh6RxIIoto8IMIDfNdLAXsShDjxcaiNripSlvhDlLl-oJlupSnxMRZtLjKNozHT_nSLPDFa8Xx8lF1tvi94-1y1oQlvf2llCnUWG5-fimsv043cUc9zP4GiXLK2RqLEQImw748Fg_UmJ-lmWGY_YfXH8LS-1PnM2xew">
+</div>
+<div class="p-sm flex flex-col flex-grow justify-between">
+<div>
+<h3 class="font-body-lg text-body-lg text-on-surface mb-1 line-clamp-1">Baby Spinach Leaves</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-2">Pre-washed</p>
+</div>
+<div class="flex items-end justify-between mt-auto">
+<span class="font-headline-sm text-headline-sm text-on-surface">₹379 <span class="font-body-md text-sm font-normal text-outline">/ 250g</span></span>
+<button class="w-8 h-8 rounded-full bg-[#E67E22] text-white flex items-center justify-center active:scale-90 transition-transform shadow-md">
+<span class="material-symbols-outlined text-lg">add</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 rounded-t-xl bg-surface-container-lowest dark:bg-surface-container-high shadow-[0px_-4px_16px_rgba(0,0,0,0.04)] flex justify-around items-center h-16 px-md">
+<button class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-4 py-1 active:scale-90 transition-transform duration-150">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: &quot;FILL&quot; 1;">home</span>
+<span class="font-label-md text-label-md mt-1 hidden">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all active:scale-90 duration-150">
+<span class="material-symbols-outlined text-2xl">search</span>
+<span class="font-label-md text-label-md mt-1 hidden">Search</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all active:scale-90 duration-150 relative">
+<div class="absolute -top-1 -right-1 bg-error text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold">2</div>
+<span class="material-symbols-outlined text-2xl">shopping_cart</span>
+<span class="font-label-md text-label-md mt-1 hidden">Cart</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all active:scale-90 duration-150">
+<span class="material-symbols-outlined text-2xl">person</span>
+<span class="font-label-md text-label-md mt-1 hidden">Profile</span>
+</button>
+</nav>
+
+
+</body></html>

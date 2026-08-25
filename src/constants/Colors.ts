@@ -1,0 +1,63 @@
+export const Colors = {
+  surface: '#f8f9fa',
+  surfaceDim: '#d9dadb',
+  surfaceContainerLowest: '#ffffff',
+  surfaceContainerLow: '#f3f4f5',
+  surfaceContainer: '#edeeef',
+  surfaceContainerHigh: '#e7e8e9',
+  surfaceContainerHighest: '#e1e3e4',
+  onSurface: '#191c1d',
+  onSurfaceVariant: '#3d4a3e',
+  outline: '#6c7b6d',
+  outlineVariant: '#bbcbbb',
+  primary: '#006d37',
+  onPrimary: '#ffffff',
+  primaryContainer: '#2ecc71',
+  onPrimaryContainer: '#005027',
+  secondary: '#944a00',
+  onSecondary: '#ffffff',
+  secondaryContainer: '#fc8f34',
+  onSecondaryContainer: '#663100',
+  error: '#ba1a1a',
+  onError: '#ffffff',
+  errorContainer: '#ffdad6',
+  background: '#f8f9fa',
+  onBackground: '#191c1d',
+  surfaceVariant: '#e1e3e4',
+  lightGrayBorder: '#E9ECEF',
+  inputBackground: '#F1F3F5',
+};
+
+export const Typography = {
+  headlineMd: {
+    fontSize: 24,
+    fontWeight: '600' as const,
+    lineHeight: 32,
+  },
+  headlineSm: {
+    fontSize: 20,
+    fontWeight: '600' as const,
+    lineHeight: 28,
+  },
+  bodyLg: {
+    fontSize: 16,
+    fontWeight: '400' as const,
+    lineHeight: 24,
+  },
+  bodyMd: {
+    fontSize: 14,
+    fontWeight: '400' as const,
+    lineHeight: 20,
+  },
+  labelMd: {
+    fontSize: 12,
+    fontWeight: '600' as const,
+    lineHeight: 16,
+    letterSpacing: 0.5,
+  },
+  buttonText: {
+    fontSize: 14,
+    fontWeight: '700' as const,
+    lineHeight: 20,
+  },
+};
