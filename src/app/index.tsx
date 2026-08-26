@@ -1,12 +1,18 @@
-import React from 'react';
-import { View, Text, StyleSheet, ScrollView, Image, Pressable, SafeAreaView } from 'react-native';
-import { Colors, Typography } from '../constants/Colors';
-import { SearchBar } from '../components/SearchBar';
-import { CategoryBadge } from '../components/CategoryBadge';
-import { ProductCard } from '../components/ProductCard';
-import { DUMMY_CATEGORIES, DUMMY_PRODUCTS } from '../constants/dummyData';
-import { MaterialIcons } from '@expo/vector-icons';
-import { Link } from 'expo-router';
+import { MaterialIcons } from "@expo/vector-icons";
+import {
+  Image,
+  Pressable,
+  SafeAreaView,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+} from "react-native";
+import { CategoryBadge } from "../components/CategoryBadge";
+import { ProductCard } from "../components/ProductCard";
+import { SearchBar } from "../components/SearchBar";
+import { Colors, Typography } from "../constants/Colors";
+import { DUMMY_CATEGORIES, DUMMY_PRODUCTS } from "../constants/dummyData";
 
 export default function HomeScreen() {
   return (
@@ -14,7 +20,9 @@ export default function HomeScreen() {
       <View style={styles.header}>
         <View style={styles.headerLeft}>
           <Image
-            source={{ uri: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAxnv6fWOS-jvNUenhIDcQEjD8RIw9qZwPTkO5Xrfk0gTpG-aA7ur0-Yv6bp_JpcGcLIwdDRijuA4ESGsLvKO2jsumV2ZX2mu8m60cjzeT5YSNnS0KwuL-0QYyHK9d6m2tPSRho0yg_GlcRWmG7PrfiHPekPvtlvk2EAsaDGkbA_qb7rNKuLhtPwMBk3NWd1OOhjCLoxLwhxgpDAd2wC5FxRGhBRT33XFaMcnWeo1_jDpGSRISl59iEwA' }}
+            source={{
+              uri: "https://lh3.googleusercontent.com/aida-public/AB6AXuAxnv6fWOS-jvNUenhIDcQEjD8RIw9qZwPTkO5Xrfk0gTpG-aA7ur0-Yv6bp_JpcGcLIwdDRijuA4ESGsLvKO2jsumV2ZX2mu8m60cjzeT5YSNnS0KwuL-0QYyHK9d6m2tPSRho0yg_GlcRWmG7PrfiHPekPvtlvk2EAsaDGkbA_qb7rNKuLhtPwMBk3NWd1OOhjCLoxLwhxgpDAd2wC5FxRGhBRT33XFaMcnWeo1_jDpGSRISl59iEwA",
+            }}
             style={styles.logo}
           />
           <Text style={styles.logoText}>GoCook</Text>
@@ -25,21 +33,31 @@ export default function HomeScreen() {
           <MaterialIcons name="expand-more" size={16} color={Colors.primary} />
         </Pressable>
         <Image
-          source={{ uri: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDgI77LJ9lnZsN4CP8ANP1qGMZDGoLZ-SUSlwPvS0xw6ovYmcgyTI_MGrd3rCgreM1N_14TWFO4_Sai8YuO2RtkDQNg3GvZMEUPOB3qyRWVmFfqxcD3zGzg7-eeNdH7uRuDcc41qXTdQfTuy6YjSNo35hndKAGxpZL3K1nvs0dbO0vSSPMeQNsDIu-c8HwulRO7x1lnMZNiDQ8xRzj7-sCkmGy4h3Znkl78XU_UD8l2eSwKSkm5gpNDCw' }}
+          source={{
+            uri: "https://lh3.googleusercontent.com/aida-public/AB6AXuDgI77LJ9lnZsN4CP8ANP1qGMZDGoLZ-SUSlwPvS0xw6ovYmcgyTI_MGrd3rCgreM1N_14TWFO4_Sai8YuO2RtkDQNg3GvZMEUPOB3qyRWVmFfqxcD3zGzg7-eeNdH7uRuDcc41qXTdQfTuy6YjSNo35hndKAGxpZL3K1nvs0dbO0vSSPMeQNsDIu-c8HwulRO7x1lnMZNiDQ8xRzj7-sCkmGy4h3Znkl78XU_UD8l2eSwKSkm5gpNDCw",
+          }}
           style={styles.avatar}
         />
       </View>
 
-      <ScrollView contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false}>
+      <ScrollView
+        contentContainerStyle={styles.scrollContent}
+        showsVerticalScrollIndicator={false}
+      >
         <SearchBar />
 
         <ScrollView
           horizontal
           showsHorizontalScrollIndicator={false}
           style={styles.categoriesContainer}
-          contentContainerStyle={styles.categoriesContent}>
+          contentContainerStyle={styles.categoriesContent}
+        >
           {DUMMY_CATEGORIES.map((cat) => (
-            <CategoryBadge key={cat.id} name={cat.name} icon={cat.icon as any} />
+            <CategoryBadge
+              key={cat.id}
+              name={cat.name}
+              icon={cat.icon as any}
+            />
           ))}
         </ScrollView>
 
@@ -47,7 +65,9 @@ export default function HomeScreen() {
           <Text style={styles.sectionTitle}>Featured Today</Text>
           <View style={styles.featuredCard}>
             <Image
-              source={{ uri: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDB8i3rFW8-lfJnmsa43AqbPBan_yNXhfkZ0j5WloIZv5Hul25lv8hut4znVvYqvRogpnGUyRXSfgTbru8HZ3vGsw2e8YRlbyOG7EAjJtfeB8D2M7qgiG1rSLVSQcz-HsQZAvBPEi3E_eu7OsPmm7iyarIbXrnmghxmiVHbPsraZOmCjEoceVA8umJowk3Mlaw7G21nnwmNc3KcHqN5f5bJWPgONhSG19owuvOZffk4ZnbD0d2FENiRUw' }}
+              source={{
+                uri: "https://lh3.googleusercontent.com/aida-public/AB6AXuDB8i3rFW8-lfJnmsa43AqbPBan_yNXhfkZ0j5WloIZv5Hul25lv8hut4znVvYqvRogpnGUyRXSfgTbru8HZ3vGsw2e8YRlbyOG7EAjJtfeB8D2M7qgiG1rSLVSQcz-HsQZAvBPEi3E_eu7OsPmm7iyarIbXrnmghxmiVHbPsraZOmCjEoceVA8umJowk3Mlaw7G21nnwmNc3KcHqN5f5bJWPgONhSG19owuvOZffk4ZnbD0d2FENiRUw",
+              }}
               style={styles.featuredImage}
             />
             <View style={styles.featuredOverlay}>
@@ -55,7 +75,9 @@ export default function HomeScreen() {
                 <Text style={styles.featuredBadgeText}>Farm Fresh</Text>
               </View>
               <Text style={styles.featuredTitle}>Organic Summer Box</Text>
-              <Text style={styles.featuredDesc}>Get 20% off seasonal veggies</Text>
+              <Text style={styles.featuredDesc}>
+                Get 20% off seasonal veggies
+              </Text>
               <Pressable style={styles.shopButton}>
                 <Text style={styles.shopButtonText}>Shop Now</Text>
               </Pressable>
@@ -89,9 +111,9 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.surface,
   },
   header: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
     paddingHorizontal: 16,
     paddingVertical: 12,
     backgroundColor: Colors.surface,
@@ -99,23 +121,23 @@ const styles = StyleSheet.create({
     borderBottomColor: Colors.lightGrayBorder,
   },
   headerLeft: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
   },
   logo: {
     width: 32,
     height: 32,
-    resizeMode: 'contain',
+    resizeMode: "contain",
     marginRight: 8,
   },
   logoText: {
     fontSize: 20,
-    fontWeight: '700',
+    fontWeight: "700",
     color: Colors.primary,
   },
   addressContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
   },
   addressText: {
     ...Typography.buttonText,
@@ -148,40 +170,40 @@ const styles = StyleSheet.create({
     marginBottom: 12,
   },
   sectionHeader: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
     marginBottom: 12,
   },
   seeAllText: {
     ...Typography.bodyMd,
     color: Colors.primary,
-    textDecorationLine: 'underline',
+    textDecorationLine: "underline",
   },
   featuredCard: {
     height: 192,
     borderRadius: 16,
-    overflow: 'hidden',
+    overflow: "hidden",
     backgroundColor: Colors.surfaceContainerLowest,
   },
   featuredImage: {
-    ...StyleSheet.absoluteFillObject,
-    width: '100%',
-    height: '100%',
+    ...StyleSheet.absoluteFill,
+    width: "100%",
+    height: "100%",
   },
   featuredOverlay: {
-    ...StyleSheet.absoluteFillObject,
-    backgroundColor: 'rgba(248,249,250,0.8)', // gradient fallback
+    ...StyleSheet.absoluteFill,
+    backgroundColor: "rgba(248,249,250,0.8)", // gradient fallback
     padding: 24,
-    justifyContent: 'center',
-    width: '75%',
+    justifyContent: "center",
+    width: "75%",
   },
   featuredBadge: {
-    backgroundColor: 'rgba(46, 204, 113, 0.2)',
+    backgroundColor: "rgba(46, 204, 113, 0.2)",
     paddingHorizontal: 8,
     paddingVertical: 4,
     borderRadius: 4,
-    alignSelf: 'flex-start',
+    alignSelf: "flex-start",
     marginBottom: 8,
   },
   featuredBadgeText: {
@@ -203,18 +225,18 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     paddingVertical: 8,
     borderRadius: 8,
-    alignSelf: 'flex-start',
+    alignSelf: "flex-start",
   },
   shopButtonText: {
     ...Typography.buttonText,
     color: Colors.onError, // white
   },
   grid: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
+    flexDirection: "row",
+    flexWrap: "wrap",
     marginHorizontal: -8,
   },
   gridItem: {
-    width: '50%',
+    width: "50%",
   },
 });
