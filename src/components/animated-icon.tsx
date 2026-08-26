@@ -3,7 +3,6 @@ import * as SplashScreen from 'expo-splash-screen';
 import { useState } from 'react';
 import { Dimensions, StyleSheet, View } from 'react-native';
 import Animated, { Easing, Keyframe } from 'react-native-reanimated';
-import { scheduleOnRN } from 'react-native-worklets';
 
 const INITIAL_SCALE_FACTOR = Dimensions.get('screen').height / 90;
 const DURATION = 600;
@@ -37,11 +36,9 @@ export function AnimatedSplashOverlay() {
 
   return animate ? (
     <Animated.View
-      entering={splashKeyframe.duration(DURATION).withCallback((finished) => {
-        'worklet';
-        if (finished) {
-          scheduleOnRN(setVisible, false);
-        }
+      entering={splashKeyframe.duration(DURATION).withCallback(() => {
+        // Use setTimeout instead of scheduleOnRN for Expo Go compatibility
+        setTimeout(() => setVisible(false), DURATION);
       })}
       style={styles.splashOverlay}>
       {image}
@@ -58,6 +55,7 @@ export function AnimatedSplashOverlay() {
     </View>
   );
 }
+
 
 const keyframe = new Keyframe({
   0: {
